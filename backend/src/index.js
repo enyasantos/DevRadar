@@ -2,10 +2,10 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors =  require('cors');
 const routes = require('./routes');
-
+require('dotenv').config();
 const app = express();
 
-mongoose.connect('mongodb+srv://enya:zonevir@cluster0-8iza7.mongodb.net/week10?retryWrites=true&w=majority', {
+mongoose.connect( process.env.URL_MONGO_ATLAS, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
